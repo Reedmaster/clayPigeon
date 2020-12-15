@@ -1,5 +1,5 @@
 <div class="flex p-4 border-b border-b-gray-400">
-    <div class="mr-2 flex-shrink-0">
+    <div class="mr-4 flex-shrink-0">
         <img src="https://i.pravatar.cc/45" alt="" class="rounded-full">
     </div>
 
