@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <section class="px-8 py-4">
+        <section class="px-12 py-4 mb-6">
             <header class="container mx-auto">
                 <h1 class="w-20">
                     <img src="/images/logo.svg" alt="ClayPigeon">
@@ -29,7 +29,7 @@
             </header>
         </section>
 
-        <section class="px-8">
+        <section class="px-12">
             <main class="container mx-auto">
                 @yield('content')
             </main>
