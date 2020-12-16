@@ -9,10 +9,9 @@
             @include ('_publish-pull-panel')
 
             <div class="border-2 border-grey-300 rounded-lg">
-                @include ('_pull')
-                @include ('_pull')
-                @include ('_pull')
-                @include ('_pull')
+                @foreach ($pulls as $pull)
+                    @include ('_pull')
+                @endforeach
             </div>
         </div>
         <div class="lg:w-1/6 bg-red-100 rounded-lg p-4">

@@ -40,4 +40,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatarAttribute()
+    {
+        return "https://i.pravatar.cc/45?u=" . $this->email;
+    }
+
+    public function timeline()
+    {
+        $friends = $this->follows()->pluck('id');
+
+        return Pull::whereIn('user_id', $friends)
+            ->orWhere('user_id', $this->id)
+            ->latest()->get();
+    }
+
+    public function pulls()
+    {
+        return $this->hasMany(Pull::class);
+    }
+
+    public function follow(User $user)
+    {
+        return $this->follows()->save($user);
+    }
+
+    public function follows()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    }
 }

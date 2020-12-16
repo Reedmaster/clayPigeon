@@ -31,7 +31,21 @@
 
         <section class="px-12">
             <main class="container mx-auto">
-                @yield('content')
+                <div class="lg:flex lg:justify-between">
+
+                    <div class="lg:w-32">
+                        @include ('_siderbar-links')
+                    </div>
+
+                    <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+                        @yield('content')
+                    </div>
+
+                    <div class="lg:w-1/6 bg-red-100 rounded-lg p-4">
+                        @include ('_friends-list')
+                    </div>
+
+                </div>
             </main>
         </section>
     </div>

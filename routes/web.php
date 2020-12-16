@@ -17,8 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/pulls', [App\Http\Controllers\PullsController::class, 'index'])->name('home');
+    Route::post('/pulls', [App\Http\Controllers\PullsController::class, 'store']);
+});
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
