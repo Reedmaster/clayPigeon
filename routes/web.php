@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pulls', [App\Http\Controllers\PullsController::class, 'store']);
 });
 
+Route::get('/profiles/{user}', [App\Http\Controllers\ProfilesController::class, 'show'])->name('profile');
 
 Auth::routes();
 
