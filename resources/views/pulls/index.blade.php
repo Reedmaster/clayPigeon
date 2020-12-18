@@ -1,7 +1,7 @@
-@extends('layouts.app')
+<x-app>
+    <div>
+        @include ('_publish-pull-panel')
 
-@section('content')
-    @include ('_publish-pull-panel')
-
-    @include ('_timeline')
-@endsection
+        @include ('_timeline')
+    </div>
+</x-app>

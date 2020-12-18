@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <section class="px-12 py-4 mb-6">
+        <section class="px-14 py-6 mb-6">
             <header class="container mx-auto">
                 <h1 class="w-20">
                     <img 

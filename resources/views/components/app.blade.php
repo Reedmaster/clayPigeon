@@ -1,5 +1,5 @@
 <x-master>
-    <section class="px-8">
+    <section class="px-14">
             <main class="container mx-auto">
                 <div class="lg:flex lg:justify-between">
                     @if (auth()->check())
