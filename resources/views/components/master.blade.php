@@ -24,30 +24,15 @@
         <section class="px-12 py-4 mb-6">
             <header class="container mx-auto">
                 <h1 class="w-20">
-                    <img src="/images/logo.svg" alt="ClayPigeon">
+                    <img 
+                        src="/images/logo.svg" 
+                        alt="ClayPigeon"
+                    >
                 </h1>
             </header>
         </section>
 
-        <section class="px-12">
-            <main class="container mx-auto">
-                <div class="lg:flex lg:justify-between">
-
-                    <div class="lg:w-32">
-                        @include ('_siderbar-links')
-                    </div>
-
-                    <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
-                        @yield('content')
-                    </div>
-
-                    <div class="lg:w-1/6 bg-red-100 rounded-lg p-4">
-                        @include ('_friends-list')
-                    </div>
-
-                </div>
-            </main>
-        </section>
+        {{ $slot }}
     </div>
 </body>
 </html>
