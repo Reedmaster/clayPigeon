@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/pulls', [App\Http\Controllers\PullsController::class, 'index'])->name('home');
     Route::post('/pulls', [App\Http\Controllers\PullsController::class, 'store']);
+
+    Route::post('/profiles/{user:name}/follow', [App\Http\Controllers\FollowsController::class, 'store']);
 });
 
 Route::get('/profiles/{user:name}', [App\Http\Controllers\ProfilesController::class, 'show'])->name('profile');
