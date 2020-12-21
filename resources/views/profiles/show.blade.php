@@ -21,11 +21,9 @@
             </div>
 
             <div class="flex">
-                @if (current_user()->is($user))
-                    <a href="{{ route('profile.edit', $user) }}" 
-                        class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs"
-                    >Edit Profile</a>
-                @endif
+                <a href="{{ route('profile.edit', $user) }}" 
+                    class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs"
+                >Edit Profile</a>
 
                 <x-follow-button :user="$user"></x-follow-button>
 
