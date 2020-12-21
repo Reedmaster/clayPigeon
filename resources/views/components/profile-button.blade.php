@@ -1,3 +1,9 @@
+@can ('edit', $user)
+    <a href="{{ route('profile.edit', $user) }}" 
+        class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs"
+    >Edit Profile</a>
+@endcan
+    
 @unless (current_user()->is($user))   
     <form method="POST" 
         action="/profiles/{{ $user->name }}/follow"
@@ -9,3 +15,4 @@
         >{{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}</button>
     </form>
 @endunless
+

@@ -21,12 +21,7 @@
             </div>
 
             <div class="flex">
-                <a href="{{ route('profile.edit', $user) }}" 
-                    class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs"
-                >Edit Profile</a>
-
-                <x-follow-button :user="$user"></x-follow-button>
-
+                <x-profile-button :user="$user"></x-profile-button>
             </div>
         </div>
 
