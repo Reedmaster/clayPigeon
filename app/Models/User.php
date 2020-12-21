@@ -58,6 +58,6 @@ class User extends Authenticatable
 
     public function pulls()
     {
-        return $this->hasMany(Pull::class);
+        return $this->hasMany(Pull::class)->latest();
     }
 }
