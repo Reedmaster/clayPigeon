@@ -26,7 +26,7 @@
         </div>
 
         <p class="text-sm">
-
+            Your profile bio goes here :)
         </p>
     </header>
 

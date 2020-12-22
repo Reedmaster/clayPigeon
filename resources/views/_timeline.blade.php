@@ -1,5 +1,7 @@
 <div class="border-2 border-grey-300 rounded-lg">
-    @foreach ($pulls as $pull)
+    @forelse ($pulls as $pull)
         @include ('_pull')
-    @endforeach
+    @empty
+        <p class="p-4">"Tumbleweed"</p>
+    @endforelse
 </div>

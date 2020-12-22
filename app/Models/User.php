@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
@@ -60,11 +61,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pull::class)->latest();
     }
-
-    // public function path($append = '')
-    // {
-    //     $path = route('profile', $this->name);
-
-    //     return $append ? "{$path}/{$append}" : $path;
-    // }
 }

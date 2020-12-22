@@ -3,7 +3,7 @@
     <h3 class="font-bold text-xl mb-4 ml-2">Following</h3>
 
     <ul>
-        @foreach (auth()->user()->follows as $user)
+        @forelse (current_user()->follows as $user)
             <li class="mb-2">
                 <div>
                     <a href="{{ route('profile', $user) }}" 
@@ -20,6 +20,8 @@
                     </a>
                 </div>
             </li>
-        @endforeach
+        @empty
+            <li>Nobody...loser</li>
+        @endforelse
     </ul>
 </div>
