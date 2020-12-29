@@ -5,7 +5,7 @@
         <textarea 
             name="body" 
             class="w-full" 
-            placeholder="Load clay pigeon"
+            placeholder="Load clay pigeon..."
         ></textarea>
     
 

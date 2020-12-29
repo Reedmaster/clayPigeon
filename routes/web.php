@@ -26,7 +26,8 @@ Route::middleware('auth')->group(function () {
         ->middleware('can:edit,user')
         ->name('profile.edit');
 
-    Route::patch('/profiles/{user:username}', [App\Http\Controllers\ProfilesController::class, 'update']);
+    Route::patch('/profiles/{user:username}', [App\Http\Controllers\ProfilesController::class, 'update'])
+        ->middleware('can:edit,user');
 });
 
 Route::get('/profiles/{user:username}', [App\Http\Controllers\ProfilesController::class, 'show'])->name('profile');

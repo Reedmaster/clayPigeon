@@ -49,13 +49,19 @@ class User extends Authenticatable
         return asset('storage/' . $value);
     }
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
     public function timeline()
     {
         $friends = $this->follows()->pluck('id');
 
         return Pull::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
-            ->latest()->get();
+            ->latest()
+            ->get();
     }
 
     public function pulls()

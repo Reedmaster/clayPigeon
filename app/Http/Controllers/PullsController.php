@@ -7,7 +7,7 @@ use App\Models\Pull;
 class PullsController extends Controller
 {
     public function index()
-    {   
+    {
         return view('pulls.index', [
             'pulls' => auth()->user()->timeline()
         ]);
