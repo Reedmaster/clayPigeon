@@ -1,5 +1,5 @@
 
-<div class="bg-gray-50 rounded-lg py-4 px-6">
+<div class="bg-gray-50 rounded-lg py-3 px-3">
     <h3 class="font-bold text-xl mb-4 ml-2">Following</h3>
 
     <ul>
