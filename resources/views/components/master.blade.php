@@ -21,19 +21,37 @@
 </head>
 <body>
     <div id="app">
-        <section class="px-14 py-5 mb-4">
+        <section class="px-14 py-5 mb-4 flex justify-between">
             <header class="container mx-auto flex flex-row">
                 <h1 class="w-20">
                     <img 
                         src="/images/logo.svg" 
                         alt="ClayPigeon"
                     >
-
                 </h1>
+
                 <p class="h-auto w-80 pl-7 text-2xl font-bold flex flex-wrap content-center">
                     Clay Pigeon
-                </p>                
+                </p> 
             </header>
+
+            @if (auth()->check())
+                <div>
+                    <a href="{{ route('logout') }}" 
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    >
+                        Logout
+                    </a>
+
+                    <form id="logout-form" 
+                        action="{{ route('logout') }}" 
+                        method="POST" 
+                        style="display: none;"
+                    >
+                        {{ csrf_field() }}
+                    </form>
+                </div>                
+            @endif
         </section>
 
         {{ $slot }}
