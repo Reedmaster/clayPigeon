@@ -65,7 +65,7 @@ class User extends Authenticatable
         return Pull::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
             ->latest()
-            ->get();
+            ->paginate(10);
     }
 
     public function pulls()

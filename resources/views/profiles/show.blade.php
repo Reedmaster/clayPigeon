@@ -15,7 +15,7 @@
         </div>
 
         <div class="flex justify-between items-center mb-4">
-            <div>
+            <div style="max-width: 270px">
                 <h2 class="font-bold text-2xl mb-0">{{ $user->name }}</h2>
                 <p class="text-sm">Joined {{ $user->created_at->diffForHumans() }} </p>
             </div>
@@ -31,6 +31,6 @@
     </header>
 
     @include ('_timeline', [
-        'pulls' => $user->pulls    
+        'pulls' => $pulls   
     ])
 </x-app>

@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\PullsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,23 +22,23 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/pulls', [App\Http\Controllers\PullsController::class, 'index'])
+    Route::get('/pulls', [PullsController::class, 'index'])
         ->name('home');
-    Route::post('/pulls', [App\Http\Controllers\PullsController::class, 'store']);
+    Route::post('/pulls', [PullsController::class, 'store']);
 
-    Route::post('/profiles/{user:username}/follow', [App\Http\Controllers\FollowsController::class, 'store'])
+    Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])
         ->name('follow');
-    Route::get('/profiles/{user:username}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])
+    Route::get('/profiles/{user:username}/edit', [ProfilesController::class, 'edit'])
         ->middleware('can:edit,user')
         ->name('profile.edit');
 
-    Route::patch('/profiles/{user:username}', [App\Http\Controllers\ProfilesController::class, 'update'])
+    Route::patch('/profiles/{user:username}', [ProfilesController::class, 'update'])
         ->middleware('can:edit,user');
 
-    Route::get('/explore', [App\Http\Controllers\ExploreController::class, 'index']);
+    Route::get('/explore', ExploreController::class);
 });
 
-Route::get('/profiles/{user:username}', [App\Http\Controllers\ProfilesController::class, 'show'])
+Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])
     ->name('profile');
 
 Auth::routes();

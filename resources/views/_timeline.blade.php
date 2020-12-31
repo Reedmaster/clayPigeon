@@ -4,4 +4,6 @@
     @empty
         <p class="p-4">"Tumbleweed"</p>
     @endforelse
+
+    {{  $pulls->links() }}
 </div>
