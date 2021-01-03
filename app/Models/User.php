@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -64,13 +63,23 @@ class User extends Authenticatable
 
         return Pull::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
+            ->withLikes()
             ->latest()
             ->paginate(10);
     }
 
     public function pulls()
     {
-        return $this->hasMany(Pull::class)->latest();
+        return $this->hasMany(Pull::class)
+            ->withCount([
+                'likes' => function ($query) {
+                    $query->where('liked', true);
+                },
+                'likes as dislikes_count' => function ($query) {
+                    $query->where('liked', false);
+                }
+            ]) 
+            ->latest();
     }
 
     public function path($append = '')
@@ -78,5 +87,10 @@ class User extends Authenticatable
         $path = route('profile', $this->username);
 
         return $append ? "{$path}/{$append}" : $path;
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }

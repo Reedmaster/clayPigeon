@@ -11,7 +11,7 @@ class ProfilesController extends Controller
     {
         return view('profiles.show', [
             'user' => $user,
-            'pulls' => $user->pulls()->paginate(10),
+            'pulls' => $user->pulls()->withLikes()->paginate(10),
         ]);
     }
 

@@ -17,8 +17,10 @@
             </a>    
         </h5>
 
-        <p class="text-sm">
+        <p class="text-sm mb-3">
             {{ $pull->body }}
         </p>
+
+        <x-like-buttons :pull="$pull"/>
     </div>
 </div>
