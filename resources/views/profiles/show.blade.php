@@ -1,7 +1,7 @@
 <x-app>
     <header class="mb-6 relative">
         <div class="relative">
-            <img src="\images\sanjiv-nayak-SLh03kuAr50-unsplash.jpg" 
+            <img src="{{ $user->banner }}" 
                 alt="" 
                 class="rounded-lg mb-2"
             >

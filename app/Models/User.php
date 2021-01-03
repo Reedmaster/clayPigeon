@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username',
         'avatar',
+        'banner',
         'name',
         'email',
         'password',
@@ -52,9 +53,18 @@ class User extends Authenticatable
         }
     }
 
+    public function getBannerAttribute($value)
+    {
+        if(isset($value)) {
+            return asset('storage/' . $value);
+        } else {
+            return asset('/images/default-banner.png');
+        }
+    }
+
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = bcrypt($value);
+        $this->attributes['password'] = $value;
     }
 
     public function timeline()
