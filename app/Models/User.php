@@ -22,6 +22,7 @@ class User extends Authenticatable
         'banner',
         'name',
         'email',
+        'bio',
         'password',
     ];
 
@@ -58,7 +59,7 @@ class User extends Authenticatable
         if(isset($value)) {
             return asset('storage/' . $value);
         } else {
-            return asset('/images/default-banner.png');
+            return asset('/images/default-banner.jpg');
         }
     }
 

@@ -78,7 +78,7 @@
                 width="350"
             >
 
-            @error('avatar')
+            @error('banner')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
@@ -97,6 +97,22 @@
             >
 
             @error('email')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label for="bio"
+                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            >Bio</label>
+
+            <textarea 
+                name="bio"
+                id="bio"
+                class="border border-gray-400 p-2 w-full" 
+            >{{ $user->bio }}</textarea>
+
+            @error('bio')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>

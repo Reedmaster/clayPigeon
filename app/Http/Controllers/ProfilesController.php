@@ -25,9 +25,10 @@ class ProfilesController extends Controller
         $attributes = request()->validate([
             'username' => ['string', 'required', 'max:255', 'alpha_dash', ValidationRule::unique('users')->ignore($user)],
             'name' => ['string', 'required', 'max:255'],
-            'avatar' => ['file'],
-            'banner' => ['file'],
+            'avatar' => ['image'],
+            'banner' => ['image','dimensions:min_width=700,min_height=200'],
             'email' => ['string', 'required', 'email', 'max:255', ValidationRule::unique('users')->ignore($user)],
+            'bio' => ['string', 'max:255'],
             'password' => ['string', 'required', 'min:8', 'max:255', 'confirmed'],
         ]);
 
@@ -41,6 +42,6 @@ class ProfilesController extends Controller
         
         $user->update($attributes);
 
-        return redirect(route('profile', $user->username));
+        return redirect($user->path());
     }
 }
