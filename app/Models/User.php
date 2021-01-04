@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Followable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -61,11 +62,6 @@ class User extends Authenticatable
         } else {
             return asset('/images/default-banner.jpg');
         }
-    }
-
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = $value;
     }
 
     public function timeline()

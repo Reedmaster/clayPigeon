@@ -33,6 +33,11 @@ trait Likeable
         return $this->like($user, false);
     }
 
+    public function unlike(?User $user = null)
+    {
+        $this->likes->where('user_id', $user->id ?? auth()->id())->first()->delete();
+    }
+
     public function isLikedBy(User $user)
     {
         return (bool) $user->likes->where('pull_id', $this->id)->where('liked', true)->count();

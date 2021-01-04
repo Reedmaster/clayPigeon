@@ -1,8 +1,13 @@
+
 <div class="flex">
     <form method="POST"
         action="/pulls/{{ $pull->id }}/like"
     >
         @csrf
+
+        @if($pull->isLikedBy(auth()->user()))
+            @method('DELETE')        
+        @endif       
 
         <button type="submit" class="flex items-center mr-4 {{ $pull->isLikedBy(current_user()) ? 'text-red-500' : 'text-gray-500' }}">
             <svg class="fill-current mr-1 w-6"
@@ -13,13 +18,18 @@
                 {{ $pull->likes ?: 0 }}
             </div>
         </button>
+
+
     </form>
 
     <form method="POST"
-    action="/pulls/{{ $pull->id }}/like"
+    action="/pulls/{{ $pull->id }}/dislike"
     >
         @csrf
-        @method('DELETE')
+
+        @if($pull->isDislikedBy(auth()->user()))
+            @method('DELETE')        
+        @endif 
 
         <button type="submit" class="flex items-center {{ $pull->isDislikedBy(current_user()) ? 'text-red-500' : 'text-gray-500' }}">
             <svg class="fill-current mr-1 w-6"

@@ -6,17 +6,31 @@ use App\Models\Pull;
 
 class PullLikesController extends Controller
 {
-    public function store(Pull $pull)
+    public function storeLike(Pull $pull)
     {
         $pull->like(current_user());
 
         return back();
     }
 
-    public function destroy(Pull $pull)
+    public function storeDislike(Pull $pull)
     {   
         $pull->dislike(current_user());
         
+        return back();
+    }
+
+    public function destroyLike(Pull $pull)
+    {
+        $pull->unlike(current_user());
+
+        return back();
+    }
+
+    public function destroyDislike(Pull $pull)
+    {
+        $pull->unlike(current_user());
+
         return back();
     }
 }

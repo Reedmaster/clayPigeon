@@ -27,8 +27,10 @@ Route::middleware('auth')->group(function () {
         ->name('home');
     Route::post('/pulls', [PullsController::class, 'store']);
 
-    Route::post('/pulls/{pull}/like', [PullLikesController::class, 'store']);
-    Route::delete('/pulls/{pull}/like', [PullLikesController::class, 'destroy']);
+    Route::post('/pulls/{pull}/like', [PullLikesController::class, 'storeLike']);
+    Route::post('/pulls/{pull}/dislike', [PullLikesController::class, 'storeDislike']);
+    Route::delete('/pulls/{pull}/like', [PullLikesController::class, 'destroyLike']);
+    Route::delete('/pulls/{pull}/dislike', [PullLikesController::class, 'destroyDislike']);
     
     Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])
         ->name('follow');
