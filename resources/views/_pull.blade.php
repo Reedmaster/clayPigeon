@@ -11,13 +11,19 @@
     </div>
 
     <div>
-        <h5 class="font-bold mb-4">
+        <h5 class="font-bold">
             <a href="{{ route('profile', $pull->user) }}"> 
                 {{ $pull->user->name}}
             </a>    
         </h5>
 
-        <p class="text-sm mb-3">
+        <h5 class="mb-4">
+            <a href="{{ route('profile', $pull->user) }}"> 
+                {{ '@' . $pull->user->username}}
+            </a>    
+        </h5>
+
+        <p class="text-sm mb-4">
             {{ $pull->body }}
         </p>
 
@@ -29,9 +35,19 @@
                     class="rounded-lg mb-1 h-full w-96 object-cover"
                 >
             </div>
-        @else
-            <div></div>
         @endif
+
+        @can ('edit', $pull->user)
+            <form method="POST"
+                action="/pulls/{{ $pull->id }}">
+                @csrf 
+                @method('DELETE')
+
+                <button type="submit">
+                    DELETE
+                </button>
+            </form>
+        @endcan
 
         <x-like-buttons :pull="$pull"></x-like-buttons>
     </div>

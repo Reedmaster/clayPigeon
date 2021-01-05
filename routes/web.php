@@ -25,7 +25,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/pulls', [PullsController::class, 'index'])
         ->name('home');
-    Route::post('/pulls', [PullsController::class, 'store'])->name('create.tweet');
+    Route::post('/pulls', [PullsController::class, 'store'])->name('create.pull');
+    Route::delete('/pulls/{pull}', [PullsController::class, 'destroy'])->name('destroy.pull');
 
     Route::post('/pulls/{pull}/like', [PullLikesController::class, 'storeLike'])->name('pull.like');
     Route::post('/pulls/{pull}/dislike', [PullLikesController::class, 'storeDislike'])->name('pull.dislike');

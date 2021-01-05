@@ -32,4 +32,13 @@ class PullsController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function destroy(Pull $pull)
+    {
+        $this->authorize('edit', $pull->user);
+
+        $pull->delete();
+
+        return redirect('/pulls');
+    }
 }
