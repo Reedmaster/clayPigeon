@@ -15,6 +15,10 @@
                     <h4 class="font-bold">
                         {{ '@' . $user->username}}
                     </h4>
+                    
+                    <h4>
+                        {{ $user->name }}
+                    </h4>
                 </div>
             </a>
         @endforeach

@@ -9,7 +9,7 @@
                         >
                     </h1>
 
-                    <p class="h-auto w-80 pl-7 text-2xl font-bold flex flex-wrap content-center">
+                    <p class="h-auto w-80 pl-5 text-2xl font-bold flex flex-wrap content-center">
                         Clay Pigeon
                     </p> 
                 </header>

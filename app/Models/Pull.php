@@ -15,9 +15,4 @@ class Pull extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    public function getImageAttribute($value)
-    {
-        return asset('storage/' . $value);
-    }
 }

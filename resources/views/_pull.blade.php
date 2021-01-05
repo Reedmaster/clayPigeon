@@ -22,13 +22,15 @@
         </p>
 
         @if($pull->image !== null)
-        <div class="mb-3">
-            <img
-                src="{{ $pull->image }}"
-                alt="tweetImage"
-                class="rounded-lg mb-1 h-full w-96 object-cover"
-            >
-        </div>
+            <div class="mb-3">
+                <img
+                    src="{{ asset('storage/' . $pull->image) }}"
+                    alt="tweetImage"
+                    class="rounded-lg mb-1 h-full w-96 object-cover"
+                >
+            </div>
+        @else
+            <div></div>
         @endif
 
         <x-like-buttons :pull="$pull"></x-like-buttons>
