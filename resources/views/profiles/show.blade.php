@@ -31,6 +31,6 @@
     </header>
 
     @include ('_timeline', [
-        'pulls' => $pulls   
+        'pulls' => $pulls,  
     ])
 </x-app>

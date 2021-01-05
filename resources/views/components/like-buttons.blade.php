@@ -1,4 +1,3 @@
-
 <div class="flex">
     <form method="POST"
         action="/pulls/{{ $pull->id }}/like"
@@ -18,8 +17,6 @@
                 {{ $pull->likes ?: 0 }}
             </div>
         </button>
-
-
     </form>
 
     <form method="POST"

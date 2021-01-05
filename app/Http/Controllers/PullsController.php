@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pull;
+use Illuminate\Http\Request;
 
 class PullsController extends Controller
 {

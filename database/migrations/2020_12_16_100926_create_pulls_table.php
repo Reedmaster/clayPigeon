@@ -16,6 +16,7 @@ class CreatePullsTable extends Migration
         Schema::create('pulls', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('image')->nullable();
             $table->string('body');
             $table->timestamps();
         });

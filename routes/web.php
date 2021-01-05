@@ -25,15 +25,15 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/pulls', [PullsController::class, 'index'])
         ->name('home');
-    Route::post('/pulls', [PullsController::class, 'store']);
+    Route::post('/pulls', [PullsController::class, 'store'])->name('create.tweet');
 
-    Route::post('/pulls/{pull}/like', [PullLikesController::class, 'storeLike']);
-    Route::post('/pulls/{pull}/dislike', [PullLikesController::class, 'storeDislike']);
-    Route::delete('/pulls/{pull}/like', [PullLikesController::class, 'destroyLike']);
-    Route::delete('/pulls/{pull}/dislike', [PullLikesController::class, 'destroyDislike']);
+    Route::post('/pulls/{pull}/like', [PullLikesController::class, 'storeLike'])->name('pull.like');
+    Route::post('/pulls/{pull}/dislike', [PullLikesController::class, 'storeDislike'])->name('pull.dislike');
+    Route::delete('/pulls/{pull}/like', [PullLikesController::class, 'destroyLike'])->name('destroy.like');
+    Route::delete('/pulls/{pull}/dislike', [PullLikesController::class, 'destroyDislike'])->name('destroy.dislike');
     
     Route::post('/profiles/{user:username}/follow', [FollowsController::class, 'store'])
-        ->name('follow');
+        ->name('follows');
     Route::get('/profiles/{user:username}/edit', [ProfilesController::class, 'edit'])
         ->middleware('can:edit,user')
         ->name('profile.edit');
@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profiles/{user:username}', [ProfilesController::class, 'update'])
         ->middleware('can:edit,user');
 
-    Route::get('/explore', ExploreController::class);
+    Route::get('/explore', ExploreController::class)->name('explore');
 });
 
 Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])

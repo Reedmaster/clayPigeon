@@ -21,6 +21,6 @@
             {{ $pull->body }}
         </p>
 
-        <x-like-buttons :pull="$pull"/>
+        <x-like-buttons :pull="$pull"></x-like-buttons>
     </div>
 </div>
