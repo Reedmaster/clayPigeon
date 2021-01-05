@@ -1,5 +1,5 @@
 <div class="border-2 border-red-700 rounded-lg px-8 py-6 mb-8">
-    <form method="POST" action="/pulls">
+    <form method="POST" action="/pulls" enctype="multipart/form-data">
         @csrf
 
         <textarea 
@@ -9,7 +9,21 @@
             required
             autofocus
         ></textarea>
-    
+
+        <div>
+            <label for="avatar"
+                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            >
+                Image
+            </label>
+            
+            <input type="file"
+                class="border border-gray-400 p-2 w-full"
+                name="image"
+                id="image"
+            >
+        </div>
+
 
         <hr class="my-4">
 

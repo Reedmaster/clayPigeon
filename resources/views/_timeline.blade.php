@@ -5,5 +5,5 @@
         <p class="p-4">"Tumbleweed"</p>
     @endforelse
 
-    {{  $pulls->links() }}
+    {{ $pulls->links() }}
 </div>

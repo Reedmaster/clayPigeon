@@ -2,7 +2,7 @@
     <div class="mr-4 flex-shrink-0">
         <a href="{{ route('profile', $pull->user) }}">
             <img src="{{ $pull->user->avatar }}" 
-                alt="" 
+                alt="avatar" 
                 class="rounded-full" 
                 width="50" 
                 height="50"
@@ -20,6 +20,16 @@
         <p class="text-sm mb-3">
             {{ $pull->body }}
         </p>
+
+        @if($pull->image !== null)
+        <div class="mb-3">
+            <img
+                src="{{ $pull->image }}"
+                alt="tweetImage"
+                class="rounded-lg mb-1 h-full w-96 object-cover"
+            >
+        </div>
+        @endif
 
         <x-like-buttons :pull="$pull"></x-like-buttons>
     </div>
