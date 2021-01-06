@@ -10,18 +10,42 @@
         </a>
     </div>
 
-    <div>
-        <h5 class="font-bold">
-            <a href="{{ route('profile', $pull->user) }}"> 
-                {{ $pull->user->name}}
-            </a>    
-        </h5>
+    <div class="w-full">
+        <div class="flex justify-between">
+            <div>
+                <h5 class="font-bold">
+                    <a href="{{ route('profile', $pull->user) }}"> 
+                        {{ $pull->user->name}}
+                    </a>    
+                </h5>
 
-        <h5 class="mb-4">
-            <a href="{{ route('profile', $pull->user) }}"> 
-                {{ '@' . $pull->user->username}}
-            </a>    
-        </h5>
+                <h5 class="mb-4 hover:text-red-500">
+                    <a href="{{ route('profile', $pull->user) }}"> 
+                        {{ '@' . $pull->user->username}}
+                    </a>    
+                </h5>
+            </div>
+
+            @can ('edit', $pull->user)
+                <form method="POST"
+                    action="/pulls/{{ $pull->id }}">
+                    @csrf 
+                    @method('DELETE')
+
+                    <button type="submit" class="flex items-center text-gray-500 hover:text-red-500">
+                        <svg class="fill-current w-3"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 333 416.25" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"
+                        >
+                            <g>
+                                <path class="fil0" d="M319 45l-123 122 123 122c19,19 -11,49 -30,30l-122 -123 -122 123c-20,19 -50,-11 -30,-30l122 -122 -122 -122c-20,-20 10,-50 30,-30l122 122 122 -122c19,-20 49,10 30,30z"/>
+                            </g>
+                            <text x="0" y="348" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Richard</text>
+                            <text x="0" y="353" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text>
+                        </svg>
+                    </button>
+                </form>
+            @endcan
+        </div>
 
         <p class="text-sm mb-4">
             {{ $pull->body }}
@@ -36,18 +60,6 @@
                 >
             </div>
         @endif
-
-        @can ('edit', $pull->user)
-            <form method="POST"
-                action="/pulls/{{ $pull->id }}">
-                @csrf 
-                @method('DELETE')
-
-                <button type="submit">
-                    DELETE
-                </button>
-            </form>
-        @endcan
 
         <x-like-buttons :pull="$pull"></x-like-buttons>
     </div>
