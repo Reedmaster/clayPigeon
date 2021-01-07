@@ -1,2 +1,0 @@
-docker build -f nginx/Dockerfile -t fortproject/nginx:latest ./nginx
-docker build -f php/Dockerfile -t fortproject/php:latest ./php

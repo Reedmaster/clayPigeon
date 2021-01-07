@@ -44,8 +44,6 @@ Route::middleware('auth')->group(function () {
         ->middleware('can:edit,user');
 
     Route::get('/explore', ExploreController::class)->name('explore');
-
-    Route::get('/notifications', NotificationsController::class, 'index')->name('notifications');
 });
 
 Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])
