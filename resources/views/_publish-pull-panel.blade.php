@@ -6,8 +6,8 @@
             name="body" 
             class="w-full" 
             placeholder="Load clay pigeon..."
+            rows="4"
             required
-            autofocus
         ></textarea>
 
         <div>

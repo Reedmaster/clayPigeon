@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\PullsController;
 use App\Http\Controllers\PullLikesController;
@@ -43,6 +44,8 @@ Route::middleware('auth')->group(function () {
         ->middleware('can:edit,user');
 
     Route::get('/explore', ExploreController::class)->name('explore');
+
+    Route::get('/notifications', NotificationsController::class, 'index')->name('notifications');
 });
 
 Route::get('/profiles/{user:username}', [ProfilesController::class, 'show'])
