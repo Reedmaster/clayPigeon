@@ -111,9 +111,7 @@
                 id="bio"
                 rows="4"
                 class="border border-gray-400 p-2 w-full"
-            >
-                {{ $user->bio }}
-            </textarea>
+            >{{ $user->bio }}</textarea>
 
             @error('bio')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
