@@ -1,46 +1,45 @@
-<div class="border-2 border-red-700 rounded-lg px-8 py-6 mb-8">
+<div class="bg-black border-2 border-gray rounded-sm shadow px-8 py-6 mb-8">
     <form method="POST" action="/pulls" enctype="multipart/form-data">
         @csrf
 
         <textarea 
             name="body" 
-            class="w-full" 
-            placeholder="Load clay pigeon..."
+            class="w-full bg-gray text-white rounded-sm" 
+            placeholder=" Load clay pigeon..."
             rows="4"
             required
         ></textarea>
 
-        <div>
-            <label for="avatar"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            >
-                Image
-            </label>
-            
-            <input type="file"
-                class="border border-gray-400 p-2 w-full"
-                name="image"
-                id="image"
-            >
+        <div class="divide-y-2 divide-orange divide-dotted">
+            <div class="pb-3">
+                <label for="avatar"
+                    class="block mb-2 font-bold text-xs text-gray"
+                >
+                    Image
+                </label>
+                
+                <input type="file"
+                    class="border-2 border-gray p-2 w-full text-gray"
+                    name="image"
+                    id="image"
+                >
+            </div>
+
+            <footer class="pt-3 flex justify-between items-center">
+                <img src="{{ auth()->user()->avatar }}" 
+                    alt="your avatar" 
+                    class="rounded-full"
+                    width="50"
+                    height="50"
+                >
+
+                <button type="submit" 
+                    class="bg-black hover:bg-gray border-2 border-orange rounded-xl shadow px-6 text-sm text-orange h-10"
+                >
+                    Pull!
+                </button>
+            </footer>
         </div>
-
-
-        <hr class="my-4">
-
-        <footer class="flex justify-between items-center">
-            <img src="{{ auth()->user()->avatar }}" 
-                alt="your avatar" 
-                class="rounded-full"
-                width="50"
-                height="50"
-            >
-
-            <button type="submit" 
-                class="bg-red-500 hover:bg-red-600 rounded-xl shadow px-6 text-sm text-white h-10"
-            >
-                Pull!
-            </button>
-        </footer>
     </form>
 
     @error('body')

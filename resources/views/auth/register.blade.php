@@ -1,5 +1,5 @@
 <x-master>
-    <div class="container mx-auto flex justify-center">
+    <div class="container mx-auto flex justify-center mt-4">
         <div class="px-12 py-4 bg-gray-200 border border-gray-300 rounded-lg">
             <div class="col-md-8">
                 <div class="card">

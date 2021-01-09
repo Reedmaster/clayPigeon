@@ -5,11 +5,11 @@
 
         <div class="mb-6">
             <label for="name"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Name</label>
 
             <input type="text"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="name"
                 id="name"
                 value="{{ $user->name }}"
@@ -17,17 +17,17 @@
             >
 
             @error('name')
-                <p class="text-red-700 text-xs mt-2">{{ $message }}</p>
+                <p class="text-orange text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
 
         <div class="mb-6">
             <label for="username"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Username</label>
 
             <input type="text"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="username"
                 id="username"
                 value="{{ $user->username }}"
@@ -41,12 +41,12 @@
 
         <div class="mb-6">
             <label for="avatar"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Avatar</label>
 
             <div class="flex">
                 <input type="file"
-                    class="border border-gray-400 p-2 w-full"
+                    class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                     name="avatar"
                     id="avatar"
                 >
@@ -64,11 +64,11 @@
 
         <div class="mb-6">
             <label for="banner"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Banner</label>
 
             <input type="file"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="banner"
                 id="banner"
             >
@@ -85,11 +85,11 @@
 
         <div class="mb-6">
             <label for="email"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Email</label>
 
             <input type="text"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="email"
                 id="email"
                 value="{{ $user->email }}"
@@ -103,14 +103,14 @@
 
         <div class="mb-6">
             <label for="bio"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Bio</label>
 
             <textarea 
                 name="bio"
                 id="bio"
                 rows="4"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
             >{{ $user->bio }}</textarea>
 
             @error('bio')
@@ -120,11 +120,11 @@
 
         <div class="mb-6">
             <label for="password"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Password</label>
 
             <input type="password"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="password"
                 id="password"
                 required
@@ -137,11 +137,11 @@
 
         <div class="mb-6">
             <label for="password_confirmation"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="block mb-2 font-bold text-xs text-white-light"
             >Password Confirmation</label>
 
             <input type="password"
-                class="border border-gray-400 p-2 w-full"
+                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
                 name="password_confirmation"
                 id="password_confirmation"
                 required
@@ -154,13 +154,13 @@
 
         <div class="mb-6">
             <button type="submit"
-                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4"
+                class="bg-black hover:bg-gray border-2 border-orange rounded-xl shadow px-4 text-sm text-orange h-10"
             >
                 Submit
             </button>
 
             <a href="{{ route('profile', ['user' => auth()->user()]) }}"
-                class="hover:underline">
+                class="text-white-light px-3 hover:underline">
                 Cancel
             </a>
         </div>

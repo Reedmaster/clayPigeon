@@ -1,6 +1,6 @@
 
-<div class="bg-red-100 border border-gray-300 rounded-lg py-3 px-3">
-    <h3 class="font-bold text-xl mb-4 ml-2">Following</h3>
+<div class="bg-black border-2 border-gray shadow py-3 px-3">
+    <h3 class="font-bold text-xl text-white mb-4 ml-2">Following</h3>
 
     <ul>
         @forelse (current_user()->follows as $user)
@@ -17,11 +17,11 @@
                         >
 
                         <div>
-                            <h4 class="font-bold">
+                            <h4 class="text-white font-bold hover:text-orange">
                                 {{ $user->name }}
                             </h4>
 
-                            <h4 class="hover:text-red-500">
+                            <h4 class="text-gray hover:text-orange">
                                 {{ '@' . $user->username}}
                             </h4>                            
                         </div>
@@ -29,7 +29,7 @@
                 </div>
             </li>
         @empty
-            <li>Nobody...loser</li>
+            <li>Following no-one yet...</li>
         @endforelse
     </ul>
 </div>

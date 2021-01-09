@@ -3,7 +3,7 @@
         <div class="relative">
             <img src="{{ $user->banner }}" 
                 alt="" 
-                class="rounded-lg mb-2"
+                class="rounded-sm mb-2"
             >
 
             <img src="{{ $user->avatar }}" 
@@ -16,9 +16,9 @@
 
         <div class="flex justify-between items-center mb-4">
             <div style="max-width: 270px">
-                <h2 class="font-bold text-2xl mb-0">{{ $user->name }}</h2>
-                <h2 class="text-lg mb-1">{{ '@' . $user->username }}</h2>
-                <p class="text-sm">Joined {{ $user->created_at->diffForHumans() }} </p>
+                <h2 class="text-white font-bold text-2xl mb-0">{{ $user->name }}</h2>
+                <h2 class="text-white-light text-lg mb-1">{{ '@' . $user->username }}</h2>
+                <p class="text-white-light text-sm">Joined {{ $user->created_at->diffForHumans() }} </p>
             </div>
 
             <div class="flex">
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <p class="text-sm">
+        <p class="text-white-light text-sm">
             {{ $user->bio }}
         </p>
     </header>

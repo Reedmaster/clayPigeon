@@ -1,9 +1,9 @@
-<div class="flex p-4 {{ $loop->last ? '' : 'border-b border-b-gray-400' }}">
+<div class="bg-black flex p-4 {{ $loop->last ? '' : 'border-b border-dashed border-gray' }}">
     <div class="mr-4 flex-shrink-0">
         <a href="{{ route('profile', $pull->user) }}">
             <img src="{{ $pull->user->avatar }}" 
                 alt="avatar" 
-                class="rounded-full" 
+                class="rounded-full max" 
                 width="50" 
                 height="50"
             >
@@ -13,13 +13,13 @@
     <div class="w-full">
         <div class="flex justify-between">
             <div>
-                <h5 class="font-bold">
+                <h5 class="font-bold text-white hover:text-orange">
                     <a href="{{ route('profile', $pull->user) }}"> 
                         {{ $pull->user->name}}
                     </a>    
                 </h5>
 
-                <h5 class="mb-4 hover:text-red-500">
+                <h5 class="mb-4 text-gray hover:text-orange">
                     <a href="{{ route('profile', $pull->user) }}"> 
                         {{ '@' . $pull->user->username}}
                     </a>    
@@ -32,7 +32,7 @@
                     @csrf 
                     @method('DELETE')
 
-                    <button type="submit" class="flex items-center text-gray-500 hover:text-red-500">
+                    <button type="submit" class="flex items-center text-gray hover:text-orange">
                         <svg class="fill-current w-3"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 333 416.25" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"
                         >
@@ -47,7 +47,7 @@
             @endcan
         </div>
 
-        <p class="text-sm mb-4">
+        <p class="text-sm text-white-light mb-4">
             {{ $pull->body }}
         </p>
 
@@ -56,7 +56,7 @@
                 <img
                     src="{{ asset('storage/' . $pull->image) }}"
                     alt="tweetImage"
-                    class="rounded-lg mb-1 h-full w-96 object-cover"
+                    class="rounded-sm mb-1 h-full w-96 object-cover"
                 >
             </div>
         @endif
