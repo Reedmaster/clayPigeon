@@ -2,7 +2,7 @@
     @forelse ($pulls as $pull)
         @include ('_pull')
     @empty
-        <p class="p-4">"Tumbleweed"</p>
+        <p class="p-4 text-white-light">"Tumbleweed"</p>
     @endforelse
 
     {{ $pulls->links() }}

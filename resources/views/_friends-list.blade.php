@@ -29,7 +29,7 @@
                 </div>
             </li>
         @empty
-            <li>Following no-one yet...</li>
+            <li class="text-white-light">Nobody yet...</li>
         @endforelse
     </ul>
 </div>
