@@ -30,7 +30,7 @@
                     </div>
                 </li>
             @empty
-                <li class="text-white-light">Nobody yet...</li>
+                <li class="text-black-light">Nobody yet...</li>
             @endforelse
         </ul>
     </div>
