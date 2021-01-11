@@ -9,19 +9,30 @@ module.exports = {
   theme: {
     colors: {
       black: {
-        DEFAULT: '#222831',
+        DEFAULT: '#363636',
+        light: '#dcdcdc',
       },
-      gray: {
-        DEFAULT: '#393e46',
-      },
-      orange: {
-        DEFAULT: '#d65a31'
+      blue: {
+        DEFAULT: '#35649c',
+        light: '#4579b2'
       },
       white: {
-        DEFAULT: '#eeeeee',
-        light: '#b0b0b0',
+        DEFAULT: '#fbfbfb',
+        light: '#fbfbfb',
       },
-    }
+      orange: {
+        DEFAULT: '#ff9b93',
+      },
+    },
+    extend: {
+      backgroundImage: theme => ({
+        'background': "url('/images/background.jpg')",
+      })
+    },
+    fontFamily: {
+      'display': ['Roboto', 'sans-serif'],
+      'body': ['Open Sans', 'sans-serif'],
+    },
   },
   variants: {
     extend: {},

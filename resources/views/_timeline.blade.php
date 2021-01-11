@@ -1,4 +1,4 @@
-<div class="border-2 border-gray rounded-sm">
+<div class="shadow-md rounded-b-xl">
     @forelse ($pulls as $pull)
         @include ('_pull')
     @empty

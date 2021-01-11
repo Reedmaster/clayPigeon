@@ -1,9 +1,9 @@
 <x-master>
     <div class="container mx-auto flex justify-center mt-4">
-        <div class="px-12 py-4 bg-gray-200 border border-gray-300 rounded-lg">
-            <div class="col-md-8">
+        <div class="px-4 py-4 bg-white-light shadow-md rounded-xl">
+            <div class="bg-white-light rounded-xl shadow-md px-8 py-6">
                 <div class="card">
-                    <div class="font-bold text-lg mb-4">{{ __('Login') }}</div>
+                    <div class="font-bold text-lg mb-4 text-black">{{ __('Login') }}</div>
 
                     <div class="card-body">
                         <form method="POST" 
@@ -12,7 +12,7 @@
                             @csrf
 
                             <div class="mb-6">
-                                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" 
+                                <label class="block mb-2 font-bold text-xs text-black"
                                     for="email"
                                 > 
                                     Email
@@ -21,7 +21,7 @@
                                 <input type="text" 
                                     name="email" 
                                     id="email"
-                                    class="border border-gray-400 p-2 w-full"
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                                     autocomplete="email"
                                     value="{{ old('email') }}"
                                     required
@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="mb-6">
-                                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" 
+                                <label class="block mb-2 font-bold text-xs text-black" 
                                     for="password"
                                 > 
                                     Password
@@ -42,7 +42,7 @@
                                 <input type="password" 
                                     name="password" 
                                     id="password"
-                                    class="border border-gray-400 p-2 w-full"
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                                     autocomplete="current-password"
                                     required
                                 >
@@ -60,7 +60,7 @@
                                         class="mr-1"
                                     >
 
-                                    <label class="text-xs text-gray-700 font-bold uppercase" 
+                                    <label class="mb-2 font-bold text-xs text-black" 
                                         for="remember"
                                     > 
                                         Remember Me
@@ -74,13 +74,13 @@
 
                             <div class="mb-6">
                                 <button type="submit"
-                                    class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-2"
+                                    class="bg-blue hover:bg-orange rounded-full shadow-md py-2 px-4 text-white-light text-xs"
                                 >
                                     Submit
                                 </button>
 
                                 <a href="{{ route('password.request') }}"
-                                    class="text-xs text-gray-700">
+                                    class="text-white-light text-xs px-3 hover:underline">
                                     Forgot your password?
                                 </a>
                             </div>

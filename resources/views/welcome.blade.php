@@ -1,18 +1,18 @@
 <x-head>
-    <section class="bg-black px-10 py-5 mb-4 w-full h-screen flex items-center justify-center flex-col">
-        <div class="w-20">
+    <section class="px-10 py-5 mb-4 w-full h-full pb-72 flex items-center justify-center">
+        <div class="w-32 pr-8 pt-8">
             <img 
                 src="/images/logo.svg" 
                 alt="ClayPigeon"
             >
         </div>
 
-        <div class="mt-8">
-            <h1 class="text-white text-center pb-7 text-5xl font-bold">
+        <div class="mt-4">
+            <h1 class="text-white text-center font-display pb-4 text-5xl font-bold">
                 Clay Pigeon
             </h1>
 
-            <p class="text-white-light text-center">
+            <p class="text-white text-lg font-body text-center">
                 A twitter clone project
             </p>
         </div>

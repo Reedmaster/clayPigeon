@@ -3,13 +3,13 @@
         @csrf
         @method('PATCH')
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="name"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Name</label>
 
             <input type="text"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="name"
                 id="name"
                 value="{{ $user->name }}"
@@ -21,13 +21,13 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="username"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Username</label>
 
             <input type="text"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="username"
                 id="username"
                 value="{{ $user->username }}"
@@ -39,14 +39,14 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="avatar"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Avatar</label>
 
             <div class="flex">
                 <input type="file"
-                    class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                     name="avatar"
                     id="avatar"
                 >
@@ -62,13 +62,13 @@
             </div>
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="banner"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Banner</label>
 
             <input type="file"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="banner"
                 id="banner"
             >
@@ -83,13 +83,13 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="email"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Email</label>
 
             <input type="text"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="email"
                 id="email"
                 value="{{ $user->email }}"
@@ -101,16 +101,16 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="bio"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Bio</label>
 
             <textarea 
                 name="bio"
                 id="bio"
                 rows="4"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-blacke"
             >{{ $user->bio }}</textarea>
 
             @error('bio')
@@ -118,13 +118,13 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-4">
             <label for="password"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Password</label>
 
             <input type="password"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="password"
                 id="password"
                 required
@@ -137,11 +137,11 @@
 
         <div class="mb-6">
             <label for="password_confirmation"
-                class="block mb-2 font-bold text-xs text-white-light"
+                class="block mb-2 font-bold text-xs text-black"
             >Password Confirmation</label>
 
             <input type="password"
-                class="bg-black border border-gray rounded-sm p-2 w-full text-white"
+                class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                 name="password_confirmation"
                 id="password_confirmation"
                 required
@@ -154,13 +154,13 @@
 
         <div class="mb-6">
             <button type="submit"
-                class="bg-black hover:bg-gray border-2 border-orange rounded-xl shadow px-4 text-sm text-orange h-10"
+                class="bg-blue hover:bg-orange rounded-full shadow-md py-2 px-4 text-white-light text-xs"
             >
                 Submit
             </button>
 
             <a href="{{ route('profile', ['user' => auth()->user()]) }}"
-                class="text-white-light px-3 hover:underline">
+                class="text-black px-3 hover:underline">
                 Cancel
             </a>
         </div>

@@ -1,6 +1,6 @@
 @can ('edit', $user)
     <a href="{{ route('profile.edit', $user) }}" 
-        class="rounded-full border-2 border-orange py-2 px-4 text-orange hover:bg-gray text-xs"
+        class="bg-blue hover:bg-orange rounded-full shadow-md py-2 px-4 text-white-light text-xs"
     >Edit Profile</a>
 @endcan
     
@@ -11,7 +11,7 @@
         @csrf
 
         <button type="submit"
-            class=" rounded-full border-2 border-orange py-2 px-4 text-orange hover:bg-gray text-xs"
+            class="bg-blue hover:bg-orange rounded-full shadow-md py-2 px-4 text-white-light text-xs"
         >{{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}</button>
     </form>
 @endunless

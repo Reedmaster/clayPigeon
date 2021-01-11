@@ -12,11 +12,11 @@
                 >
 
                 <div> 
-                    <h4 class="text-white font-bold hover:text-orange">
+                    <h4 class="text-black font-bold hover:text-orange">
                         {{ $user->name }}
                     </h4>
 
-                    <h4 class="text-gray hover:text-orange">
+                    <h4 class="text-blue hover:text-orange">
                         {{ '@' . $user->username}}
                     </h4>                    
                 </div>

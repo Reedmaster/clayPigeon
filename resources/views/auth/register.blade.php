@@ -1,9 +1,9 @@
 <x-master>
     <div class="container mx-auto flex justify-center mt-4">
-        <div class="px-12 py-4 bg-gray-200 border border-gray-300 rounded-lg">
-            <div class="col-md-8">
+        <div class="px-4 py-4 bg-white-light shadow-md rounded-xl">
+            <div class="bg-white-light rounded-xl shadow-md px-8 py-6">
                 <div class="card">
-                    <div class="font-bold text-lg mb-4">{{ __('Register') }}</div>
+                    <div class="font-bold text-lg mb-4 text-black">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         <form method="POST" 
@@ -13,14 +13,14 @@
 
                             <div class="mb-2">
                                 <label for="username" 
-                                    class="block mb-1 uppercase font-bold text-xs text-gray-700"
+                                    class="block mb-2 font-bold text-xs text-black"
                                 >
                                     Username
                                 </label>
 
                                 <input id="username" 
                                     type="text" 
-                                    class="border border-gray-400 p-1 w-full" 
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black" 
                                     name="username" 
                                     value="{{ old('name') }}" 
                                     required 
@@ -35,14 +35,14 @@
 
                             <div class="mb-2">
                                 <label for="name" 
-                                    class="block mb-1 uppercase font-bold text-xs text-gray-700"
+                                    class="block mb-2 font-bold text-xs text-black"
                                 >
                                     {{ __('Name') }}
                                 </label>
                                 
                                 <input id="name" 
                                     type="text" 
-                                    class="border border-gray-400 p-1 w-full" 
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black" 
                                     name="name" 
                                     value="{{ old('name') }}" 
                                     required 
@@ -57,14 +57,14 @@
 
                             <div class="mb-2">
                                 <label for="email" 
-                                    class="block mb-1 uppercase font-bold text-xs text-gray-700"
+                                    class="block mb-2 font-bold text-xs text-black"
                                 >
                                     {{ __('Email') }}
                                 </label>
                                 
                                 <input id="email" 
                                     type="text" 
-                                    class="border border-gray-400 p-1 w-full" 
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black" 
                                     name="email" 
                                     value="{{ old('email') }}" 
                                     required 
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="mb-2">
-                                <label class="block mb-1 uppercase font-bold text-xs text-gray-700" 
+                                <label class="block mb-2 font-bold text-xs text-black" 
                                     for="password"
                                 > 
                                     {{ __('Password') }}
@@ -87,7 +87,7 @@
                                 <input type="password" 
                                     name="password" 
                                     id="password"
-                                    class="border border-gray-400 p-1 w-full"
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                                     autocomplete="new-password"
                                     required
                                 >
@@ -97,8 +97,8 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-2">
-                                <label class="block mb-1 uppercase font-bold text-xs text-gray-700" 
+                            <div class="mb-3">
+                                <label class="block mb-2 font-bold text-xs text-black" 
                                     for="password-confirm"
                                 > 
                                     {{ __('Confirm Password') }}
@@ -107,7 +107,7 @@
                                 <input type="password" 
                                     name="password_confirmation" 
                                     id="password-confirm"
-                                    class="border border-gray-400 p-1 w-full"
+                                    class="bg-white-light border border-black-light rounded-lg p-2 w-full text-black"
                                     autocomplete="new-password"
                                     required
                                 >
@@ -119,7 +119,7 @@
 
                             <div class="mb-1">
                                 <button type="submit"
-                                    class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-2"
+                                    class="bg-blue hover:bg-orange rounded-full shadow-md py-2 px-4 text-white-light text-xs"
                                 >
                                     {{ __('Register') }}
                                 </button>
